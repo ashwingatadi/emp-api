@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const _ = require('lodash');
 var ObjectID = require('mongodb').ObjectID;
+var cors = require('cors');
 
 var mongoose = require('./db/connect.js').mongoose;
 var employee = require('./models/employee').employee;
@@ -10,6 +11,7 @@ const port = process.env.PORT || 3000;
 
 var app = express();
 app.use(bodyParser.json());
+app.use(cors());
 
 app.get('/',(req, res)=>{
     res.send('Hello Express');
