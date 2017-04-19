@@ -55,14 +55,14 @@ app.get('/employee/:id',(req, res)=>{
         res.status(404).send();
     }
 
-    // employee.find({_id: id}).then(
-    //     (employee)=>{
-    //         res.send(employee);
-    //     },
-    //     (error) =>{
-    //         res.send(error);
-    //     }
-    // )
+    // // employee.find({_id: id}).then(
+    // //     (employee)=>{
+    // //         res.send(employee);
+    // //     },
+    // //     (error) =>{
+    // //         res.send(error);
+    // //     }
+    // // )
     employee.findById(id).then(
         (employee)=>{
             if(!employee){
